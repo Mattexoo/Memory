@@ -9,10 +9,6 @@ header{
 #titolo{
     font-weight: bolder;
 }
-img{
-    height: 300px;
-    width: 150px;
-}
 main{
     margin: 25px;
 }
@@ -21,4 +17,10 @@ main{
 }
 .row{
     margin: 25px;
+    width: 100%;
+    justify-content: space-between;
+}
+.row> div{
+    height: 400px;
+    width: 250px;
 }
