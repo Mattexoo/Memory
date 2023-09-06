@@ -32,102 +32,135 @@ function inizioGioco(){
 
     div1.addEventListener("click", function(){
         if(carteGirate<=1){
+            div1.style.animation= 'animazione 1s'
+            localStorage.setItem('divGirato', "1");
             div1.style.backgroundImage="url('./img/"+ ordineCarte[0]+".png')"
+            div1.value=1;
             if(carteGirate==1){
-                controllaCarteGirate();
+                controllaCarteGirate(div1);
                 carteGirate=0;
             }else{
                 carteGirate=1;
+                localStorage.setItem('cartaGirata', div1.style.backgroundImage)
+                localStorage.setItem('divGirato', "1");
             }
         }
     })
 
     div2.addEventListener("click", function(){
         if(carteGirate<=1){
+            div2.style.animation= 'animazione 1s'
             div2.style.backgroundImage="url('./img/"+ ordineCarte[1]+".png')"
+            div2.value=1;
             if(carteGirate==1){
-                controllaCarteGirate();
+                controllaCarteGirate(div2);
                 carteGirate=0;
             }else{
                 carteGirate=1;
+                localStorage.setItem('cartaGirata', div2.style.backgroundImage)
+                localStorage.setItem('divGirato', "2");
             }
         }
     })
 
     div3.addEventListener("click", function(){
         if(carteGirate<=1){
+            div3.style.animation= 'animazione 1s'
             div3.style.backgroundImage="url('./img/"+ ordineCarte[2]+".png')"
+            div3.value=1;
             if(carteGirate==1){
-                controllaCarteGirate();
+                controllaCarteGirate(div3);
                 carteGirate=0;
             }else{
                 carteGirate=1;
+                localStorage.setItem('cartaGirata', div3.style.backgroundImage)
+                localStorage.setItem('divGirato', "3");
             }
         }
     })
 
     div4.addEventListener("click", function(){
         if(carteGirate<=1){
+            div4.style.animation= 'animazione 1s'
             div4.style.backgroundImage="url('./img/"+ ordineCarte[3]+".png')"
+            div4.value=1;
             if(carteGirate==1){
-                controllaCarteGirate();
+                controllaCarteGirate(div4);
                 carteGirate=0;
             }else{
                 carteGirate=1;
+                localStorage.setItem('cartaGirata', div4.style.backgroundImage)
+                localStorage.setItem('divGirato', "4");
             }
         }
     })
 
     div5.addEventListener("click", function(){
         if(carteGirate<=1){
+            div5.style.animation= 'animazione 1s'
             div5.style.backgroundImage="url('./img/"+ ordineCarte[4]+".png')"
+            div5.value=1;
             if(carteGirate==1){
-                controllaCarteGirate();
+                controllaCarteGirate(div5);
                 carteGirate=0;
             }else{
                 carteGirate=1;
+                localStorage.setItem('cartaGirata', div5.style.backgroundImage)
+                localStorage.setItem('divGirato', "5");
             }
         }
     })
 
     div6.addEventListener("click", function(){
         if(carteGirate<=1){
+            div6.style.animation= 'animazione 1s'
             div6.style.backgroundImage="url('./img/"+ ordineCarte[5]+".png')"
+            div6.value=1;
             if(carteGirate==1){
-                controllaCarteGirate();
+                controllaCarteGirate(div6);
                 carteGirate=0;
             }else{
                 carteGirate=1;
+                localStorage.setItem('cartaGirata', div6.style.backgroundImage)
+                localStorage.setItem('divGirato', "6");
             }
         }
     })
 
     div7.addEventListener("click", function(){
         if(carteGirate<=1){
+            div7.style.animation= 'animazione 1s'
             div7.style.backgroundImage="url('./img/"+ ordineCarte[6]+".png')"
+            div7.value=1;
             if(carteGirate==1){
-                controllaCarteGirate();
+                controllaCarteGirate(div7);
                 carteGirate=0;
             }else{
                 carteGirate=1;
+                localStorage.setItem('cartaGirata', div7.style.backgroundImage)
+                localStorage.setItem('divGirato', "7");
             }
         }
     })
 
     div8.addEventListener("click", function(){
         if(carteGirate<=1){
+            div8.style.animation= 'animazione 1s'
             div8.style.backgroundImage="url('./img/"+ ordineCarte[7]+".png')"
+            div8.value=1;
             if(carteGirate==1){
-                controllaCarteGirate();
-                carteGirate=0;
+                controllaCarteGirate(div8);
+                carteGirate=0; 
             }else{
                 carteGirate=1;
+                localStorage.setItem('cartaGirata', div8.style.backgroundImage)
+                localStorage.setItem('divGirato', "8");
             }
         }
     })
     
 }
-
+let coppieRimaste=4;
 function random() {
     var numeri = [1, 1, 2, 2, 3, 3, 4, 4];
     var sequenza = [];
@@ -141,8 +174,9 @@ function random() {
     return sequenza;
 }
 
-function controllaCarteGirate(){
+function controllaCarteGirate(div){
     let carte=[];
+    let a="";
     let i=0;
     let div1= document.getElementById("1");
     let div2= document.getElementById("2");
@@ -154,36 +188,45 @@ function controllaCarteGirate(){
     let div8= document.getElementById("8");
 
     if(div1.style.backgroundImage!="url('./img/cartaD.jpg')"){
-        carte[i]=div1.style.backgroundImage;
+        if(localStorage.getItem("cartaGirata")==div1.style.backgroundImage)  
         i++;
     }
     if(div2.style.backgroundImage!="url('./img/cartaD.jpg')"){
-        carte[i]=div2.style.backgroundImage;
+        if(localStorage.getItem("cartaGirata")==div2.style.backgroundImage)  
         i++;
     }
     if(div3.style.backgroundImage!="url('./img/cartaD.jpg')"){
-        carte[i]=div3.style.backgroundImage;
+        if(localStorage.getItem("cartaGirata")==div3.style.backgroundImage)  
         i++;
     }
     if(div4.style.backgroundImage!="url('./img/cartaD.jpg')"){
-        carte[i]=div4.style.backgroundImage;
+        if(localStorage.getItem("cartaGirata")==div4.style.backgroundImage)  
         i++;
     }
     if(div5.style.backgroundImage!="url('./img/cartaD.jpg')"){
-        carte[i]=div5.style.backgroundImage;
+        if(localStorage.getItem("cartaGirata")==div5.style.backgroundImage)  
         i++;
     }
     if(div6.style.backgroundImage!="url('./img/cartaD.jpg')"){
-        carte[i]=div6.style.backgroundImage;
+        if(localStorage.getItem("cartaGirata")==div6.style.backgroundImage)  
         i++;
     }
     if(div7.style.backgroundImage!="url('./img/cartaD.jpg')"){
-        carte[i]=div7.style.backgroundImage;
+        if(localStorage.getItem("cartaGirata")==div7.style.backgroundImage)  
         i++;
     }
     if(div8.style.backgroundImage!="url('./img/cartaD.jpg')"){
-        carte[i]=div8.style.backgroundImage;
+        if(localStorage.getItem("cartaGirata")==div8.style.backgroundImage)  
         i++;
     }
-    console.log(carte)
+    if(i==2){
+        console.log("ciao")
+        coppieRimaste=coppieRimaste-1;
+    }else{
+        div.style.backgroundImage="url('./img/cartaD.jpg')";
+        document.getElementById(localStorage.getItem("divGirato")).style.backgroundImage="url('./img/cartaD.jpg')"
+    }
+    if(coppieRimaste==0){
+        alert("HAI COMPLETATO IL GIOCO")
+    }
 }
